@@ -1,0 +1,3 @@
+#!/bin/sh
+
+$(cdmenu $(ls /usr/bin))
