@@ -1,5 +1,5 @@
 TARGET  := cdmenu
-SCRIPTS :=
+SCRIPTS := cdmenu_run
 CFLAGS  ?= -Os -pipe -march=native
 LDFLAGS ?= -s
 CFLAGS  +=
