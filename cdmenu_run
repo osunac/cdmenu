@@ -1,3 +1,14 @@
 #!/bin/sh
 
-$(cdmenu $(ls /usr/bin))
+cache=~/.cache/cdmenu_run
+
+for i in $(echo $PATH | tr ':' ' ')
+do
+	if [ $i -nt $cache ]
+	then
+		echo $(sh -c "shopt -s nullglob; echo {$(echo $PATH | tr ':' ',')}/*") > $cache
+		break
+	fi
+done
+
+exec $(cdmenu $(cat $cache))
