@@ -97,6 +97,7 @@ void init_menu(void)
 	menu = new_menu(buffer);
 	menu_opts_off(menu, O_SHOWDESC);
 	set_menu_win(menu, newwin(LINES, COLS, 1, 0));
+	set_menu_sub(menu, derwin(menu_win(menu), LINES-1, COLS, 0, 0));
 	post_menu(menu);
 
 	update_menu();
